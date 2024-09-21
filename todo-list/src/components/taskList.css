@@ -1,0 +1,172 @@
+/* General table styling */
+.task-list-container {
+  width: 100%;
+}
+
+.task-list-header {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+
+  margin-right: 10px;
+  align-items: center;
+}
+
+.task-list-header h2 {
+  margin: 0;
+  font-size: 24px;
+  flex-basis: 100%; /* Ensure the header takes the full width */
+}
+
+.search {
+  margin-left: auto;
+  background-image: url("../assets/314478_search_icon.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 20px 20px;
+
+  /* border: none; */
+}
+
+/* Table Responsive Styling */
+.table-responsive {
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.table-data {
+  width: 100%; /* Ensure table takes full width */
+  min-width: 600px; /* Set a minimum width for better readability */
+  border-collapse: collapse; /* Remove space between borders */
+}
+
+th,
+td {
+  padding: 12px; /* Increased padding for touch targets */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.dropdown-menu {
+  position: absolute; /* Adjust based on your layout */
+  background-color: rgb(255, 218, 150);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.actions button {
+  padding: 6px 12px;
+  margin-right: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.actions button.edit-btn:hover {
+  background-color: #218838;
+}
+
+.actions button.delete-btn {
+  background-color: #dc3545;
+}
+
+/* Pagination styling */
+.pagination-container {
+  display: flex;
+  justify-content: end; /* Align to the left */
+  margin-top: 15px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-right: 10px;
+}
+
+.pagination-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 5px 8px; /* Smaller padding */
+
+  font-size: 10px; /* Smaller font size */
+}
+
+.pagination-btn:hover {
+  background-color: #ba2222;
+  color: white;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-btn.disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-list-header h2 {
+    font-size: 20px;
+  }
+
+  .task-list-header {
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .task-table th,
+  .task-table td {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+  .dropdown-menu {
+    position: relative; /* Change to relative for stacking */
+  }
+  .actions button {
+    padding: 4px 8px;
+    font-size: 12px; /* Smaller button text */
+  }
+
+  .pagination-container {
+    flex-direction: column; /* Stack pagination buttons on smaller screens */
+    align-items: flex-end; /* Align pagination to the end */
+  }
+}
+
+@media (max-width: 480px) {
+  th,
+  td {
+    font-size: 12px; /* Further reduce font size for very small screens */
+  }
+
+  .actions button {
+    padding: 4px 6px;
+    font-size: 10px; /* Even smaller button text */
+  }
+
+  .pagination-btn {
+    padding: 4px 6px;
+    font-size: 10px; /* Smaller pagination button text */
+  }
+
+  .search {
+    width: 100%; /* Full width on small devices */
+  }
+}
